@@ -1,9 +1,22 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+  <uses-permission android:name="android.permission.INTERNET"/>
+  <!-- OPTIONAL PERMISSIONS, REMOVE WHATEVER YOU DO NOT NEED -->
+  <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+  <uses-permission android:name="android.permission.VIBRATE"/>
+  <!-- These require runtime permissions on M -->
+  <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+  <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+  <uses-permission android:name="android.permission.ACCESS_MEDIA_LOCATION"/>
+  <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE"/>
+
     <application
         android:label="agro_integration_dashboard"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity
+            android:usesCleartextTraffic="true"
+            android:requestLegacyExternalStorage="true"
             android:name=".MainActivity"
             android:exported="true"
             android:launchMode="singleTop"

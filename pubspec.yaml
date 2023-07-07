@@ -36,6 +36,18 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
   get: ^4.6.5
+  get_storage: ^2.1.1
+  rounded_loading_button: ^2.1.0
+  flutter_form_builder: ^9.0.0
+  http: ^1.0.0
+  connectivity_plus: ^4.0.1
+  flutter_fusioncharts: ^1.0.2
+  flutter_screenutil: ^5.8.4
+  flutter_svg: ^2.0.7
+  eva_icons_flutter: ^3.1.0
+  bordered_text: ^2.0.0
+  flutter_initicon: ^3.0.0+1
+  flutter_login: ^4.1.1
 
 dev_dependencies:
   flutter_test:
@@ -89,3 +101,25 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
+
+  assets:
+    - assets/
+    - .env
+    - fusioncharts/integrate/index_local.html
+    - fusioncharts/integrate/index_cdn.html
+    - fusioncharts/integrate/index.js
+    - fusioncharts/core/fusioncharts.charts.js
+    - fusioncharts/core/fusioncharts.overlappedbar2d.js
+    - fusioncharts/core/fusioncharts.timeseries.js
+    - fusioncharts/core/fusioncharts.treemap.js
+    - fusioncharts/core/fusioncharts.powercharts.js
+    - fusioncharts/core/fusioncharts.maps.js
+    - fusioncharts/core/fusioncharts.zoomscatter.js
+    - fusioncharts/core/fusioncharts.js
+    - fusioncharts/core/fusioncharts.excelexport.js
+    - fusioncharts/core/fusioncharts.widgets.js
+    - fusioncharts/core/fusioncharts.zoomline.js
+    - fusioncharts/core/fusioncharts.gantt.js
+    - fusioncharts/core/fusioncharts.overlappedcolumn2d.js
+    - fusioncharts/core/fusioncharts.vml.js
+    - fusioncharts/core/fusioncharts.accessibility.js  # N

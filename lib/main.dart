@@ -1,6 +1,26 @@
+import 'package:agro_integration_dashboard/binding/chart_binding.dart';
+import 'package:agro_integration_dashboard/binding/home_binding.dart';
+import 'package:agro_integration_dashboard/binding/kualitas_panen_binding.dart';
+import 'package:agro_integration_dashboard/binding/panen_binding.dart';
+import 'package:agro_integration_dashboard/binding/produktivitas_sku_binding.dart';
+import 'package:agro_integration_dashboard/binding/produktivitas_unit_binding.dart';
+import 'package:agro_integration_dashboard/binding/restan_binding.dart';
+import 'package:agro_integration_dashboard/view/chart/chart_page.dart';
+import 'package:agro_integration_dashboard/view/chart/kualitas_panen_page.dart';
+import 'package:agro_integration_dashboard/view/chart/produktivitas_sku_page.dart';
+import 'package:agro_integration_dashboard/view/chart/produktivitas_unit_page.dart';
+import 'package:agro_integration_dashboard/view/chart/restan_page.dart';
+import 'package:agro_integration_dashboard/view/home/home_page.dart';
+import 'package:agro_integration_dashboard/view/chart/panen_page.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get_storage/get_storage.dart';
 
-void main() {
+import 'package:agro_integration_dashboard/binding/login_binding.dart';
+import 'package:agro_integration_dashboard/view/login/login_page.dart';
+
+void main() async {
+  await GetStorage.init();
   runApp(const MyApp());
 }
 
@@ -10,28 +30,58 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
+    return GetMaterialApp(
+      title: 'Agro Integration Dashboard',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        // This is the theme of your application.
-        //
-        // TRY THIS: Try running your application with "flutter run". You'll see
-        // the application has a blue toolbar. Then, without quitting the app,
-        // try changing the seedColor in the colorScheme below to Colors.green
-        // and then invoke "hot reload" (save your changes or press the "hot
-        // reload" button in a Flutter-supported IDE, or press "r" if you used
-        // the command line to start the app).
-        //
-        // Notice that the counter didn't reset back to zero; the application
-        // state is not lost during the reload. To reset the state, use hot
-        // restart instead.
-        //
-        // This works for code too, not just values: Most code changes can be
-        // tested with just a hot reload.
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
+        primarySwatch: Colors.purple,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      initialRoute: '/login',
+      defaultTransition: Transition.fade,
+      // home: LoginPage(),
+      // initialBinding: LoginBinding(),
+      getPages: [
+        GetPage(
+          name: '/login',
+          page: () => LoginPage(),
+          binding: LoginBinding(),
+        ),
+        GetPage(
+          name: '/',
+          page: () => HomePage(),
+          binding: HomeBinding(),
+        ),
+        GetPage(
+          name: '/chart',
+          page: () => ChartPage(),
+          binding: ChartBinding(),
+        ),
+        GetPage(
+          name: '/panen',
+          page: () => PanenPage(),
+          binding: PanenBinding(),
+        ),
+        GetPage(
+          name: '/restan',
+          page: () => RestanPage(),
+          binding: RestanBinding(),
+        ),
+        GetPage(
+          name: '/kualitas-panen',
+          page: () => KualitasPanenPage(),
+          binding: KualitasPanenBinding(),
+        ),
+        GetPage(
+          name: '/produktivitas-unit',
+          page: () => ProduktivitasUnitPage(),
+          binding: ProduktivitasUnitBinding(),
+        ),
+        GetPage(
+          name: '/produktivitas-sku',
+          page: () => ProduktivitasSKUPage(),
+          binding: ProduktivitasSKUBinding(),
+        ),
+      ],
     );
   }
 }
